@@ -1,0 +1,10 @@
+# OS / 편집기 잡파일
+.DS_Store
+*.swp
+*~
+Thumbs.db
+
+# 툴/빌드 산출물 (예방)
+node_modules/
+.vercel/
+*.log
