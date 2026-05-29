@@ -10,7 +10,6 @@
   --accent:#ffd400;
   --link:#6fb3ff;
   --navbg:#141418;
-  --headfg:#ffffff;
 }
 [data-theme="light"]{
   --red:#c81912;
@@ -22,7 +21,6 @@
   --accent:#a6700a;
   --link:#1257c4;
   --navbg:#ffffff;
-  --headfg:#ffffff;
 }
 
 *{ box-sizing:border-box; }
@@ -59,7 +57,7 @@ header.top .sub{ color:var(--en); font-size:.92rem; }
 header.top .src{ font-size:.8rem; }
 header.top .src a{ color:var(--accent); }
 
-h2.sec{ background:var(--red); color:var(--headfg); padding:12px 16px; border-radius:8px; margin:34px 0 14px; font-size:1.25rem; }
+h2.sec{ background:var(--red); color:#fff; padding:12px 16px; border-radius:8px; margin:34px 0 14px; font-size:1.25rem; }
 h3.sub{ color:var(--accent); border-left:4px solid var(--accent); padding:4px 0 4px 12px; margin:24px 0 8px; font-size:1.05rem; }
 
 /* Q&A question heading (FAQ pages) */
@@ -70,8 +68,7 @@ h3.q .ko{ display:block; color:var(--ko); font-size:1.02rem; font-weight:700; }
 .row{ background:var(--card); border:1px solid var(--line); border-left:3px solid var(--red); border-radius:6px; padding:10px 14px; margin:8px 0; }
 .en{ color:var(--en); font-size:.9rem; margin:0 0 5px; }
 .ko{ color:var(--ko); margin:0; }
-.row .en{ color:var(--en); font-size:.9rem; margin:0 0 8px; }
-.row .ko{ color:var(--ko); }
+.row .en{ margin-bottom:8px; }  /* 색/크기는 .en 상속, 행 안에서 하단 여백만 확대 */
 .row.note{ border-left-color:var(--accent); }
 .row ul{ margin:6px 0; padding-left:20px; }
 .row li{ margin:3px 0; }
@@ -80,8 +77,8 @@ h3.q .ko{ display:block; color:var(--ko); font-size:1.02rem; font-weight:700; }
 .toc a{ color:var(--accent); text-decoration:none; display:block; padding:3px 0; }
 .toc a:hover{ text-decoration:underline; }
 
-.row a, .en a, .ko a{ color:var(--link); text-decoration:underline; }
 a{ color:var(--link); }
+.row a, .en a, .ko a{ text-decoration:underline; }  /* 색은 위 a 규칙 상속 */
 
 footer.bot{ margin-top:40px; border-top:1px solid var(--line); padding-top:16px; color:var(--en); font-size:.82rem; text-align:center; }
 
