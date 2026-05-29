@@ -1,0 +1,100 @@
+/* Defqon.1 KR Guide — shared styles (dark default + light theme) */
+
+:root{
+  --red:#e2231a;
+  --bg:#0f0f12;
+  --card:#17171c;
+  --line:#2a2a32;
+  --en:#9aa0a6;
+  --ko:#f2f2f2;
+  --accent:#ffd400;
+  --link:#6fb3ff;
+  --navbg:#141418;
+  --headfg:#ffffff;
+}
+[data-theme="light"]{
+  --red:#c81912;
+  --bg:#f5f5f7;
+  --card:#ffffff;
+  --line:#dcdce2;
+  --en:#5b6066;
+  --ko:#16171a;
+  --accent:#a6700a;
+  --link:#1257c4;
+  --navbg:#ffffff;
+  --headfg:#ffffff;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; }
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+  background:var(--bg); color:var(--ko); line-height:1.65;
+  transition:background .2s ease, color .2s ease;
+}
+.wrap{ max-width:880px; margin:0 auto; padding:18px 18px 80px; }
+
+/* top navigation bar (shared across pages) */
+.topnav{
+  position:sticky; top:0; z-index:50;
+  background:var(--navbg); border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:6px; flex-wrap:wrap;
+  padding:10px 16px;
+}
+.topnav .brand{ font-weight:700; color:var(--red); margin-right:8px; text-decoration:none; font-size:.95rem; white-space:nowrap; }
+.topnav a.navlink{ color:var(--ko); text-decoration:none; font-size:.85rem; padding:5px 9px; border-radius:6px; opacity:.85; }
+.topnav a.navlink:hover{ background:var(--card); opacity:1; }
+.topnav a.navlink.active{ color:var(--red); font-weight:600; opacity:1; }
+.topnav .spacer{ flex:1; }
+.theme-toggle{
+  cursor:pointer; background:var(--card); color:var(--ko);
+  border:1px solid var(--line); border-radius:20px;
+  padding:5px 12px; font-size:.82rem; white-space:nowrap;
+}
+.theme-toggle:hover{ border-color:var(--red); }
+
+header.top{ text-align:center; border-bottom:3px solid var(--red); padding-bottom:18px; margin:20px 0 22px; }
+header.top h1{ font-size:1.7rem; margin:.2em 0; letter-spacing:.5px; }
+header.top .sub{ color:var(--en); font-size:.92rem; }
+header.top .src{ font-size:.8rem; }
+header.top .src a{ color:var(--accent); }
+
+h2.sec{ background:var(--red); color:var(--headfg); padding:12px 16px; border-radius:8px; margin:34px 0 14px; font-size:1.25rem; }
+h3.sub{ color:var(--accent); border-left:4px solid var(--accent); padding:4px 0 4px 12px; margin:24px 0 8px; font-size:1.05rem; }
+
+/* Q&A question heading (FAQ pages) */
+h3.q{ margin:22px 0 6px; font-size:1.02rem; line-height:1.4; }
+h3.q .en{ display:block; color:var(--en); font-size:.86rem; font-weight:600; }
+h3.q .ko{ display:block; color:var(--ko); font-size:1.02rem; font-weight:700; }
+
+.row{ background:var(--card); border:1px solid var(--line); border-left:3px solid var(--red); border-radius:6px; padding:10px 14px; margin:8px 0; }
+.en{ color:var(--en); font-size:.9rem; margin:0 0 5px; }
+.ko{ color:var(--ko); margin:0; }
+.row .en, .row .ko{ font-size:inherit; }
+.row .en{ color:var(--en); font-size:.9rem; margin:0 0 8px; }
+.row .ko{ color:var(--ko); }
+.row.note{ border-left-color:var(--accent); }
+.row ul{ margin:6px 0; padding-left:20px; }
+.row li{ margin:3px 0; }
+
+.toc{ background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px 18px; margin-bottom:10px; }
+.toc a{ color:var(--accent); text-decoration:none; display:block; padding:3px 0; }
+.toc a:hover{ text-decoration:underline; }
+
+.row a, .en a, .ko a{ color:var(--link); text-decoration:underline; }
+a{ color:var(--link); }
+
+footer.bot{ margin-top:40px; border-top:1px solid var(--line); padding-top:16px; color:var(--en); font-size:.82rem; text-align:center; }
+
+/* landing page cards */
+.cards{ display:grid; grid-template-columns:1fr; gap:14px; margin:20px 0; }
+@media(min-width:680px){ .cards{ grid-template-columns:1fr 1fr; } }
+.cardlink{
+  display:block; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--red);
+  border-radius:10px; padding:18px; text-decoration:none; color:var(--ko); transition:border-color .15s ease, transform .1s ease;
+}
+.cardlink:hover{ border-color:var(--red); transform:translateY(-2px); }
+.cardlink h3{ margin:0 0 6px; color:var(--red); font-size:1.1rem; }
+.cardlink .en{ color:var(--en); font-size:.82rem; margin:0 0 8px; }
+.cardlink p{ margin:0; font-size:.9rem; }
+.disclaimer{ background:var(--card); border:1px dashed var(--line); border-radius:8px; padding:12px 16px; color:var(--en); font-size:.8rem; margin-top:24px; }
