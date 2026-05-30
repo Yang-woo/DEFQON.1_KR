@@ -81,6 +81,12 @@ a{ color:var(--link); }
 .row a, .en a, .ko a{ text-decoration:underline; }  /* 색은 위 a 규칙 상속 */
 
 footer.bot{ margin-top:40px; border-top:1px solid var(--line); padding-top:16px; color:var(--en); font-size:.82rem; text-align:center; }
+footer.bot .credit{ margin-top:10px; opacity:.9; }
+footer.bot .credit a{ color:var(--link); text-decoration:none; }
+footer.bot .credit a:hover{ text-decoration:underline; }
+footer.bot .credit a.gh{ display:inline-block; vertical-align:-3px; }
+footer.bot .credit a.gh:hover{ opacity:.7; }
+footer.bot .credit svg.ico{ width:15px; height:15px; }
 
 /* landing page cards */
 .cards{ display:grid; grid-template-columns:1fr; gap:14px; margin:20px 0; }

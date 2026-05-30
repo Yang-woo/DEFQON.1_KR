@@ -141,9 +141,23 @@
       "이 사이트는 익명 사용 통계(Microsoft Clarity · Vercel Analytics)를 수집합니다.";
     footer.appendChild(p);
   }
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", injectNotice);
-  } else {
+
+  // --- 7) 푸터 크레딧 이메일 mailto 조립 (HTML 소스에 평문 노출 방지) ---
+  function wireEmail() {
+    var addr = ["yangwoo.dev", "gmail.com"].join("@");
+    var links = document.querySelectorAll("a.email-link");
+    for (var i = 0; i < links.length; i++) {
+      links[i].href = "mailto:" + addr;
+    }
+  }
+
+  function initFooter() {
     injectNotice();
+    wireEmail();
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initFooter);
+  } else {
+    initFooter();
   }
 })();
